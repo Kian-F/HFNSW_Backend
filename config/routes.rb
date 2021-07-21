@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
+  post 'user/token' => 'user_token#create'
   get 'registrations/new'
+  # scope '/auth' do
+  #   post '/signin', to: 'user_token#create'
+  #   post '/signup', to: 'users#create'
+  # end
+  get 'users/current' => 'users#current'
   resources :sessions, only: [:create]
   resources :registrations, only: [:create]
   delete :logout, to: "sessions#logout"
