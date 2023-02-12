@@ -22,11 +22,15 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+
+gem 'omniauth-auth0', '~> 3.0'
+gem 'omniauth-rails_csrf_protection', '~> 1.0' # prevents forged authentication requests
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -59,3 +63,8 @@ gem 'bcrypt', '~> 3.1', '>= 3.1.16'
 gem 'rack-cors', :require => 'rack/cors'
 
 gem 'knock', git: 'https://github.com/nsarno/knock', branch: 'master', ref: '9214cd027422df8dc31eb67c60032fbbf8fc100b'
+
+# gem 'pg', '>= 0.18', '< 2.0'
+gem 'pg', '~> 1.3', '>= 1.3.5'
+
+gem 'jwt'
