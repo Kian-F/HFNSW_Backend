@@ -1,25 +1,24 @@
 class RegistrationsController < ApplicationController
-  def create 
-    user: User.cretae!(
-      email: params['user']['email'],
-      password: params['user']['password_digest'],
-      password_confirmation: params['user']['password_confirmation']
-    )
+  def create
+    @user = User.create(user_params)
 
-    if user
-      session[:user_id] = user.id
+    if @user
+      session[:user_id] = @user.id
       render json: {
-        status: created,
-        user: user
+        status: :created,
+        user: @user
       }
-    else 
-      render json: {
-        status: 500,
-        error: 'Couldn/'t create the user'
-      }  
+    else
+      render json: { status: 500 }
     end
   end
 
-  def new
+  private
+  def user_params
+    params.require(:user).permit(
+      :email,
+      :password,
+      :password_confirmation
+    )
   end
 end
