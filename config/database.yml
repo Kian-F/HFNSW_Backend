@@ -48,6 +48,10 @@ test:
   username: postgres
   password: ''
 
+# production:
+#   <<: *default
+#   database: 'HFNSW_production'
+
 production:
   <<: *default
-  database: 'HFNSW_production'
+  url: <%= ENV['DATABASE_URL'] %>
