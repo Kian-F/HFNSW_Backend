@@ -1,0 +1,18 @@
+databases:
+  - name: development_HFNSW
+    databaseName: development_HFNSW
+    user:
+
+services:
+  - type: web
+    name: HFNSW
+    env: ruby
+    buildCommand: './bin/render-build.sh'
+    startCommand: 'bundle exec puma -C config/puma.rb'
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: HFNSW
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
