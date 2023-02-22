@@ -1,6 +1,6 @@
 databases:
-  - name: development_HFNSW
-    databaseName: development_HFNSW
+  - name: HFNSW
+    databaseName: HFNSW
     user:
 
 services:
