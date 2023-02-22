@@ -52,6 +52,16 @@ test:
 #   <<: *default
 #   database: 'HFNSW_production'
 
+# production:
+#   <<: *default
+#   url: <%= ENV['DATABASE_URL'] %>
+
+production:
+  url: <%= ENV['DATABASE_URL'] %>
+
 production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
+  database: render_deploy_production
+  username: render_deploy
+  password: <%= ENV['RENDER_DEPLOY_DATABASE_PASSWORD'] %>
