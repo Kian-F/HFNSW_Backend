@@ -38,6 +38,10 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
+group :development, :test do
+  gem 'factory_bot_rails'
+end
+
 # Run against this stable release
   group :development, :test do
   gem 'rspec-rails', '~> 5.0.0'
