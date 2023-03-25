@@ -22,5 +22,7 @@
     "webpack-cli": "3.3.12",
     "webpack-dev-server": "3"
   },
-  "packageManager": "yarn@1.22.5"
+  "packageManager": "yarn@1.22.5",
+  "start": "react-scripts --openssl-legacy-provider start",
+  "build": "react-scripts --openssl-legacy-provider build"
 }
