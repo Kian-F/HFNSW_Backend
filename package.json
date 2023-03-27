@@ -22,9 +22,5 @@
     "webpack-cli": "3.3.12",
     "webpack-dev-server": "3"
   },
-  "packageManager": "yarn@1.22.5",
-  "scripts": {
-    "serve": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve",
-    "build": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build"
-  }
+  "packageManager": "yarn@1.22.5"
 }
