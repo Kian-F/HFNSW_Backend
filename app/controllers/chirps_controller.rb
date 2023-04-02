@@ -1,5 +1,5 @@
 class ChirpsController < SecuredController
-  skip_before_action :authorize_request, only: [:index, :show]
+  skip_before_action :authorize_request, only: [:index, :show], raise: false
 
   def index
     chirps = Chirp.all
