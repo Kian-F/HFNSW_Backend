@@ -29,7 +29,8 @@ default: &default
   encoding: unicode
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: 5
+  # pool: 5
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
@@ -57,11 +58,11 @@ test:
 #   url: <%= ENV['DATABASE_URL'] %>
 
 production:
-  url: <%= ENV['DATABASE_URL'] %>
-
-production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
-  database: render_deploy_production
-  username: render_deploy
-  password: <%= ENV['RENDER_DEPLOY_DATABASE_PASSWORD'] %>
+# production:
+#   <<: *default
+#   url: <%= ENV['DATABASE_URL'] %>
+#   database: render_deploy_production
+#   username: render_deploy
+#   password: <%= ENV['RENDER_DEPLOY_DATABASE_PASSWORD'] %>
