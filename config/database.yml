@@ -59,7 +59,7 @@ test:
 
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  url: <%= ENV['postgres://hfnsw_user:YgQzZxDb66NaO07qQzYewZgZnFM7EwSV@dpg-cfpli302i3mo4brj8ghg-a/hfnsw'] %>
 # production:
 #   <<: *default
 #   url: <%= ENV['DATABASE_URL'] %>
