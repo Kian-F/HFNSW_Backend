@@ -53,16 +53,12 @@ test:
 #   <<: *default
 #   database: 'HFNSW_production'
 
-# production:
-#   <<: *default
-#   url: <%= ENV['DATABASE_URL'] %>
-
 production:
   <<: *default
-  url: <%= ENV['postgres://hfnsw_user:YgQzZxDb66NaO07qQzYewZgZnFM7EwSV@dpg-cfpli302i3mo4brj8ghg-a/hfnsw'] %>
+  url: <%= ENV['DATABASE_URL'] %>
 # production:
 #   <<: *default
 #   url: <%= ENV['DATABASE_URL'] %>
-#   database: render_deploy_production
+#   database: HFNSW
 #   username: render_deploy
 #   password: <%= ENV['RENDER_DEPLOY_DATABASE_PASSWORD'] %>

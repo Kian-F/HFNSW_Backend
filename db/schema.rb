@@ -32,6 +32,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_28_133322) do
     t.datetime "updated_at", null: false
     t.string "email"
     t.string "password_digest"
+    t.string "nickname"
   end
 
 end
