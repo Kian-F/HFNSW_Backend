@@ -10,11 +10,6 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:create]
   resources :registrations, only: [:create]
-  delete :logout, to: "sessions#logout"
-  get :logged_in, to: "sessions#logged_in"
   root to: "statics#home"
-  resources :users, :only => [:new, :create, :update, :index, :show]
-  get 'users/new'
-  
-  
+  resources :users, :only => [:new, :create, :update, :index, :show, :destroy]
 end

@@ -36,6 +36,18 @@ class UsersController < SecuredController
     end
   end
 
+  def destroy
+    @user = User.find(params[:id])
+
+    if @user.delete
+      render json: @user.id
+      redirect_to root_path
+    else
+      flash[:error] = 'Failed to delete this product!'
+      render :destroy
+    end
+  end
+
   def me
     @user = current_user
 
